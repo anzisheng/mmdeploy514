@@ -18,4 +18,5 @@ def base_pose_estimator__forward(self, inputs, *args, **kwargs):
     Returns:
         torch.Tensor: The predicted heatmaps.
     """
+    print("oooooooooooooooooo")
     return self._forward(inputs)
