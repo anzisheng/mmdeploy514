@@ -1,4 +1,8 @@
 # Copyright (c) OpenMMLab. All rights reserved.
+#yolov3
+#mmdeploy/configs/mmdet/detection/detection_rknn-int8_static-320x320.py mmdetection/configs/yolo/yolov3_mobilenetv2_8xb24-320-300e_coco.py https://download.openmmlab.com/mmdetection/v2.0/yolo/yolov3_mobilenetv2_320_300e_coco/yolov3_mobilenetv2_320_300e_coco_20210719_215349-d18dff72.pth mmdetection/demo/demo.jpg --work-dir mmdeploy_models/mmdet/yolov3 --device cpu --dump-info
+
+
 import argparse
 import logging
 import os
