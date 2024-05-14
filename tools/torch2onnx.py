@@ -1,4 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
+#partition for yolov3
+#configs/mmdet/detection/yolov3_partition_onnxruntime_static.py ../mmdetection/configs/yolo/yolov3_d53_8xb8-ms-608-273e_coco.py  https://download.openmmlab.com/mmdetection/v2.0/yolo/yolov3_d53_mstrain-608_273e_coco/yolov3_d53_mstrain-608_273e_coco_20210518_115020-a2c3acb8.pth  /home/an/project/mmdetection/demo/demo.jpg --work-dir ./work-dirs/mmdet/yolov3/ort/partition
+
 import argparse
 import logging
 import os

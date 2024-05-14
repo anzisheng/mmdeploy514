@@ -174,3 +174,4 @@ demo/csharp/*/Properties
 docs/cppapi/docs
 tests/test_yolov3/*.onnx
 tests/test_yolov3/*.pth
+/work-dirs
