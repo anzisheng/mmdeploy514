@@ -2,6 +2,11 @@
 #yolov3
 #mmdeploy514/configs/mmdet/detection/detection_rknn-int8_static-320x320.py mmdetection/configs/yolo/yolov3_mobilenetv2_8xb24-320-300e_coco.py https://download.openmmlab.com/mmdetection/v2.0/yolo/yolov3_mobilenetv2_320_300e_coco/yolov3_mobilenetv2_320_300e_coco_20210719_215349-d18dff72.pth mmdetection/demo/demo.jpg --work-dir mmdeploy_models/mmdet/yolov3 --device cpu --dump-info
 
+
+#only for onnxruntime
+#mmdeploy/configs/mmpose/pose-detection_rtmo_onnxruntime_dynamic.py  mmpose/configs/body_2d_keypoint/rtmo/body7/rtmo-l_16xb16-600e_body7-640x640.py mmpose/weight/rtmo-l_16xb16-600e_body7-640x640-b37118ce_20231211.pth mmpose/data/test/multi-person.jpeg --work-dir results-rtmo --dump-info  --show --device cpu
+
+
 #working
 #mmdeploy514/configs/mmpose/pose-detection_rtmo_rknn-fp16_dynamic-640x640.py mmpose/configs/body_2d_keypoint/rtmo/body7/rtmo-l_16xb16-600e_body7-640x640.py mmpose/weight/rtmo-l_16xb16-600e_body7-640x640-b37118ce_20231211.pth mmpose/data/test/multi-person.jpeg --work-dir results-rtmo_pose --dump-info  --show --device cpu
 
