@@ -501,7 +501,7 @@ def multiclass_nms_static(boxes: Tensor,
 
 @mark(
     'multiclass_nms',
-    inputs=['input','boxes'],#['boxes', 'scores'],
+    inputs=['boxes', 'scores'], #['input','boxes'],#['boxes', 'scores'],
     outputs=['dets', 'labels', 'index'])
 def multiclass_nms(boxes: Tensor,
                    scores: Tensor,
