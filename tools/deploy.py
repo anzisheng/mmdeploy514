@@ -10,7 +10,7 @@
 #working
 #mmdeploy514/configs/mmpose/pose-detection_rtmo_rknn-fp16_dynamic-640x640.py mmpose/configs/body_2d_keypoint/rtmo/body7/rtmo-l_16xb16-600e_body7-640x640.py mmpose/weight/rtmo-l_16xb16-600e_body7-640x640-b37118ce_20231211.pth mmpose/data/test/multi-person.jpeg --work-dir results-rtmo_pose --dump-info  --show --device cpu
 
-#working test
+#working onnxruntime test
 #mmdeploy514/configs/mmpose/pose-detection_rtmo_rknn_dynamic.py  mmpose/configs/body_2d_keypoint/rtmo/body7/rtmo-l_16xb16-600e_body7-640x640.py mmpose/weight/rtmo-l_16xb16-600e_body7-640x640-b37118ce_20231211.pth mmpose/data/test/multi-person.jpeg --work-dir results-rtmo_test --dump-info  --show --device cpu
 
 

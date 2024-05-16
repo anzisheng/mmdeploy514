@@ -13,7 +13,8 @@ onnx_config = dict(
         'keypoints': {
             0: 'batch'
         }
-    })
+    }
+    )
 
 codebase_config = dict(
     post_processing=dict(
@@ -24,3 +25,17 @@ codebase_config = dict(
         keep_top_k=50,
         background_label_id=-1,
     ))
+
+#need to change star and end
+partition_config = dict(
+  type='rknn',  # the partition policy name
+  apply_marks=True,  # should always be set to True
+  partition_cfg=[
+      dict(
+          save_file='rtmo.onnx',  # name to save the partitioned onnx
+          start=['multiclass_nms:input'],  # [mark_name:input, ...]
+          end=['multiclass_nms:output'],  # [mark_name:output, ...]
+          output_names=[f'pred_maps.{i}' for i in range(3)]
+          ) # output names
+  ]
+  )

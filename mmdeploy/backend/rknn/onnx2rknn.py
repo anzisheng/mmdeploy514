@@ -77,11 +77,15 @@ def onnx2rknn(onnx_model: str,
 
     rknn = RKNN(verbose=True)
     rknn.config(**common_params)
+
     ret = rknn.load_onnx(
         model=onnx_model,
         inputs=input_names,
         input_size_list=input_size_list,
         outputs=output_names)
+
+    # rknn = RKNN(verbose=True)
+    # rknn.config(**common_params)
     if ret != 0:
         logger.error('Load model failed!')
         exit(ret)

@@ -238,6 +238,9 @@ def mark(func_name: Optional[str] = None,
 
     def decorator(f):
         func = func_name if func_name else f.__name__
+        if(func_name == 'detector_forward'): #anzisheng
+            xxxx = 888
+
         is_inspect = False
         if not inputs:
             input_names = list(inspect.signature(f).parameters.keys())

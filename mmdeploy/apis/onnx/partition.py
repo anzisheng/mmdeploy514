@@ -78,7 +78,9 @@ def extract_partition(model: Union[str, onnx.ModelProto],
         start_marker = [start_marker]
     for s in start_marker:
         start_name, func_id, start_type = parse_extractor_io_string(s)
+        count = 0
         for node in model.graph.node:
+            count += 1
             if node.op_type == 'Mark':
                 attr = attribute_to_dict(node.attribute)
                 if attr['func'] == start_name and attr[

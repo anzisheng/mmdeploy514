@@ -49,7 +49,7 @@ partition_config = dict(
   partition_cfg=[
       dict(
           save_file='model.onnx',  # name to save the partitioned onnx
-          start=['pose_detector_forward:input'],  # [mark_name:input, ...]
-          end=['yolo_head:input'],  # [mark_name:output, ...]
+          start=['pose_head:input'],  # [mark_name:input, ...]
+          end=['multiclass_nms_1:output'],  # [mark_name:output, ...]
           output_names=[f'pred_maps.{i}' for i in range(3)]) # output names
   ])

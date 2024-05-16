@@ -14,7 +14,7 @@ partition_config = dict(
         dict(
             save_file='model.onnx',  # name to save the partitioned onnx
             start=['detector_forward:input'],  # [mark_name:input, ...]
-            end=['yolo_head:input'],  # [mark_name:output, ...]
+            end=['yolo_head:output'],  # [mark_name:output, ...]
             output_names=[f'pred_maps.{i}' for i in range(3)])  # out names
     ])
 

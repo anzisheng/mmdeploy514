@@ -8,3 +8,4 @@ backend_config = dict(
         dataset=None,
         pre_compile=False,
         rknn_batch_size=1)) #anzisheng -1
+

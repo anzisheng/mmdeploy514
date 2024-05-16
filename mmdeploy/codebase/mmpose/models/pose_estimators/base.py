@@ -51,7 +51,7 @@ def _set_metainfo(data_samples, img_shape):
 
 @FUNCTION_REWRITER.register_rewriter(
     'mmpose.models.pose_estimators.base.BasePoseEstimator.forward')
-def base_pose_estimator__forward(self, inputs, data_samples: OptSampleList,*args, **kwargs):
+def base_pose_estimator__forward(self, inputs, *args, **kwargs):
     """Rewrite `forward` of TopDown for default backend.'.
 
     1.directly call _forward of subclass.

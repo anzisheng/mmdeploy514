@@ -69,6 +69,10 @@ def single_stage_detector__forward(self,
             - labels (Tensor): Labels of bboxes, has a shape
                 (num_instances, ).
     """
+
+    print("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww")
+    print(type(self))
+
     ctx = FUNCTION_REWRITER.get_context()
 
     deploy_cfg = ctx.cfg

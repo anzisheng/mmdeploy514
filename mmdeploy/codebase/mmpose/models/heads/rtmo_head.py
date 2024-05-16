@@ -9,6 +9,13 @@ from mmdeploy.codebase.mmdet import get_post_processing_params
 from mmdeploy.core import FUNCTION_REWRITER
 from mmdeploy.mmcv.ops.nms import multiclass_nms
 from mmdeploy.utils import Backend, get_backend
+from mmdeploy.core import FUNCTION_REWRITER, mark
+
+#anzisheng
+# @mark(    'pose_head', inputs=['input'], outputs=['keypoints'])
+# def __forward_impl(self, batch_inputs):
+#     print("ppppppppppppppppppppp")
+#     return  batch_inputs
 
 
 @FUNCTION_REWRITER.register_rewriter(
@@ -40,6 +47,7 @@ def predict(self,
     deploy_cfg = ctx.cfg
 
     cfg = self.test_cfg if test_cfg is None else test_cfg
+    #x = __forward_impl(x,batch_data_samples)
 
     # get predictions
     cls_scores, bbox_preds, _, kpt_vis, pose_vecs = self.head_module(x)[:5]
