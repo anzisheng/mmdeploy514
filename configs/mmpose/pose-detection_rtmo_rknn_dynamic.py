@@ -33,9 +33,12 @@ partition_config = dict(
   partition_cfg=[
       dict(
           save_file='rtmo.onnx',  # name to save the partitioned onnx
-          start=['multiclass_nms:input'],  # [mark_name:input, ...]
-          end=['multiclass_nms:output'],  # [mark_name:output, ...]
+          #start=['multiclass_nms:input'],  # [mark_name:input, ...]
+          start=['pose_detector_forward:input'],  # [mark_name:input, ...]
+          #end=['multiclass_nms:output'],  # [mark_name:output, ...]
+          end=['multiclass_nms:input'],  # [mark_name:output, ...]
           output_names=[f'pred_maps.{i}' for i in range(3)]
           ) # output names
   ]
   )
+#pose-detection_rtmo_rknn_dynamic.py

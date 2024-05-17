@@ -14,7 +14,7 @@ OptSampleList = Optional[SampleList]
 
 
 @mark(    'pose_detector_forward', inputs=['input'], outputs=['dets', 'labels', 'masks'])
-def __forward_impl(self, batch_inputs, data_samples):
+def __forward_impl(self, batch_inputs): #, data_samples):
     """Rewrite and adding mark for `forward`.
 
     Encapsulate this function for rewriting `forward` of BasePoseEstimator.
@@ -22,12 +22,13 @@ def __forward_impl(self, batch_inputs, data_samples):
     2. Support both dynamic and static export to onnx.
     """
 
-    x = self.extract_feat(batch_inputs)
+    #batch_inputs = self.extract_feat(batch_inputs)
 
     #output = self.bbox_head.predict(x, data_samples, rescale=False)
-    output = self.head.predict(x, data_samples, {}) #anzisheng, rescale=False)
+    #output = self.head.predict(x, data_samples, {}) #anzisheng, rescale=False)
     #output = self.RTMOHead.predict(x,  rescale=False)
     #output = self.head.predict(x, None)#,rescale=False)
+    return batch_inputs#x
 
 
 
@@ -84,6 +85,7 @@ def base_pose_estimator__forward(self, inputs, *args, **kwargs):
     #
     #
 
+    inputs = __forward_impl(self, inputs)
 
 
 
